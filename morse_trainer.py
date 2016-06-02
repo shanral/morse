@@ -30,14 +30,15 @@ def verify_message(msg):
 #        if char != '.' or char != '-':
 #            sys.exit('Error, invalid character: ' + char)
 
+# BUG: handles spaces incorrectly
+#  possible poor solution, change length of space in dict, but would cause
+#  problems if there are leading or trailing spaces in the message, need
+#  something else
 def print_morse(msg):
     verify_message(msg)
+    chars = list(msg)
     output = ''
-
-    # TODO: fix problem with spacing
-    for char in msg:
-        output = output + LETTER_TO_CODE[char]
-
+    output = output + ' '.join([LETTER_TO_CODE[x] for x in chars])
     return output
 
 def print_words(msg):
