@@ -1,0 +1,2 @@
+1 space between letters
+5 spaces between words
