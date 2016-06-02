@@ -44,8 +44,8 @@ def print_morse(msg):
 def print_words(msg):
     #verify_morse(msg)
     output = ''
-    words = msg.split(' ' * 5)
 
+    words = msg.split(' ' * 5)
     for word in words:
         chars = word.split(' ')
         output = output + ''.join([CODE_TO_LETTER[x] for x in chars]) + ' '
