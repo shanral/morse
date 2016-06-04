@@ -15,12 +15,12 @@ LETTER_TO_CODE = {
     }
 
 # create the reverse of the above
-CODE_TO_LETTER = {v: k for k, v in LETTER_TO_CODE.items()}
+CODE_TO_LETTER = {value: key for key, value in LETTER_TO_CODE.items()}
 
 def verify_message(msg):
     keys = LETTER_TO_CODE.keys()
     for char in msg:
-        if char not in keys and char != ' ':
+        if char not in keys:
             sys.exit('Error, invalid character: ' + char)
 
 # TODO: sub all \s{5} to \s{1}, verify as normal
